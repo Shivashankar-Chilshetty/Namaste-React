@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React adding child methods</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        /*
+        <div id="parent">
+            <div id="child">
+                <h1> Heading 1</h1>
+                <h2> Heading 2</h2> 
+            </div> 
+            <div id="child2">
+                <h1> Heading 1</h1>
+                <h2> Heading 2</h2> 
+            </div>    
+        <div>   ==>this code can be written as below in react
+        */
+        let heading = React.createElement("h1", {}, "Heading1");
+        let heading2 = React.createElement("h2", {}, "Heading2");
+        let parent = React.createElement("div", {id: "parent"}, [
+            React.createElement("div", {id: "child"}, [heading, heading2]),
+            React.createElement("div", {id: "child2"}, [heading, heading2])
+        ]);
+        let root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(parent);
+    </script>
+</body>
+</html>
